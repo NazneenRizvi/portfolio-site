@@ -2,20 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    color: #0e0101;
+    background-color: #fff;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .menuLink {
+    @apply cursor-pointer text-white hover:text-gray-300;
+  }
+  
+  /* Default Tag Color */
+  .tags {
+    background-color: #0abde3;
+    margin-right: 0.5rem;
+    padding: 3px 10px;
+    display: inline-block;
+    color: #fff;
+    font-size: 12px;
+  }
+
+  .tags:last-child {
+    margin-right: 0;
+  }
+
+  /* Different Colors for Specific Tags */
+  .tags:nth-child(1) {
+    background-color: #f39c12; /* Orange */
+  }
+
+  .tags:nth-child(2) {
+    background-color: #a55eea; /* Purple */
+  }
+
+  .tags:nth-child(3) {
+    background-color: #4cca0e; /* Green */
+  }
+
+  .tags:nth-child(4) {
+    background-color: #e74c3c; /* Red */
+  }
+}
+
+@layer components {
+  .bg-accent {
+    background-color: #a55eea; /* Purple color */
+    color: #fff; /* Optional: White text for contrast */
+  }
 }
