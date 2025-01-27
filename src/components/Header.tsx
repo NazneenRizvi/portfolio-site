@@ -41,7 +41,7 @@ export default function Header() {
           <div className="md:hidden mt-4 space-y-4">
             <Link href="#about" className="block hover:text-purple-600" onClick={handleMenuClick}>About</Link>
             <Link href="#skills" className="block hover:text-purple-600" onClick={handleMenuClick}>Skills</Link>
-            <Link href="#experience" className="block hover:text-purple-600" onClick={handleMenuClick}>Experience</Link>
+            <Link href="#experience" className="block hover:text-purple-600" onClick={handleMenuClick}>Project</Link>
             <Link href="#contact" className="block hover:text-purple-600" onClick={handleMenuClick}>Contact</Link>
           </div>
         )}
