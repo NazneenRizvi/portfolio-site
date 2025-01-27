@@ -1,3 +1,4 @@
+/* Tailwind Base, Components, and Utilities */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -11,9 +12,9 @@
 
 @layer components {
   .menuLink {
-    @apply cursor-pointer text-white hover:text-gray-300;
+    @apply cursor-pointer text-white hover:text-gray-300 transition duration-300 ease-in-out;
   }
-  
+
   /* Default Tag Color */
   .tags {
     background-color: #0abde3;
@@ -29,26 +30,45 @@
   }
 
   /* Different Colors for Specific Tags */
-  .tags:nth-child(1) {
-    background-color: #f39c12; /* Orange */
+  .tags[data-color="orange"] {
+    background-color: #f39c12;
   }
 
-  .tags:nth-child(2) {
-    background-color: #a55eea; /* Purple */
+  .tags[data-color="purple"] {
+    background-color: #a55eea;
   }
 
-  .tags:nth-child(3) {
-    background-color: #4cca0e; /* Green */
+  .tags[data-color="green"] {
+    background-color: #4cca0e;
   }
 
-  .tags:nth-child(4) {
-    background-color: #e74c3c; /* Red */
+  .tags[data-color="red"] {
+    background-color: #e74c3c;
+  }
+
+  .bg-accent {
+    background-color: #a55eea;
+    color: #fff; /* Optional: White text for contrast */
   }
 }
 
-@layer components {
-  .bg-accent {
-    background-color: #a55eea; /* Purple color */
-    color: #fff; /* Optional: White text for contrast */
-  }
+/* Add these styles for specific sections */
+#about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 4rem;
+  min-height: 100vh; /* Adjust this as needed */
+}
+
+#contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 4rem;
+  min-height: 100vh; /* Adjust this as needed */
 }
