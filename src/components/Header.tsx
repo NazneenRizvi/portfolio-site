@@ -1,9 +1,14 @@
-"use client"
+"use client";
 import Link from 'next/link';
 import { useState } from 'react';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+
+  // Function to handle menu click and close the menu
+  const handleMenuClick = () => {
+    setIsOpen(false); // Close the menu when a link is clicked
+  };
 
   return (
     <header className="fixed w-full bg-white/80 backdrop-blur-sm z-50">
@@ -12,7 +17,7 @@ export default function Header() {
           <Link href="/" className="text-2xl font-bold text-purple-600">
             Nazneen Rizvi
           </Link>
-          
+
           <div className="hidden md:flex space-x-8">
             <Link href="#about" className="hover:text-purple-600 transition">About</Link>
             <Link href="#skills" className="hover:text-purple-600 transition">Skills</Link>
@@ -21,7 +26,7 @@ export default function Header() {
           </div>
 
           {/* Mobile Menu Button */}
-          <button 
+          <button
             className="md:hidden"
             onClick={() => setIsOpen(!isOpen)}
           >
@@ -34,10 +39,10 @@ export default function Header() {
         {/* Mobile Menu */}
         {isOpen && (
           <div className="md:hidden mt-4 space-y-4">
-            <Link href="#about" className="block hover:text-purple-600">About</Link>
-            <Link href="#skills" className="block hover:text-purple-600">Skills</Link>
-            <Link href="#experience" className="block hover:text-purple-600">Experience</Link>
-            <Link href="#contact" className="block hover:text-purple-600">Contact</Link>
+            <Link href="#about" className="block hover:text-purple-600" onClick={handleMenuClick}>About</Link>
+            <Link href="#skills" className="block hover:text-purple-600" onClick={handleMenuClick}>Skills</Link>
+            <Link href="#experience" className="block hover:text-purple-600" onClick={handleMenuClick}>Experience</Link>
+            <Link href="#contact" className="block hover:text-purple-600" onClick={handleMenuClick}>Contact</Link>
           </div>
         )}
       </nav>
