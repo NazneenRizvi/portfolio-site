@@ -21,7 +21,9 @@ export default function Header() {
           <div className="hidden md:flex space-x-8">
             <Link href="#about" className="hover:text-purple-600 transition">About</Link>
             <Link href="#skills" className="hover:text-purple-600 transition">Skills</Link>
-            <Link href="#experience" className="hover:text-purple-600 transition">Projects</Link>
+            <Link href="#projects" className="hover:text-purple-600 transition">
+            Projects
+             </Link>
             <Link href="#contact" className="hover:text-purple-600 transition">Contact</Link>
           </div>
 
@@ -41,7 +43,7 @@ export default function Header() {
           <div className="md:hidden mt-4 space-y-4">
             <Link href="#about" className="block hover:text-purple-600" onClick={handleMenuClick}>About</Link>
             <Link href="#skills" className="block hover:text-purple-600" onClick={handleMenuClick}>Skills</Link>
-            <Link href="#experience" className="block hover:text-purple-600" onClick={handleMenuClick}>Experience</Link>
+            <Link href="#projects" className="block hover:text-purple-600" onClick={handleMenuClick}> Projects</Link>
             <Link href="#contact" className="block hover:text-purple-600" onClick={handleMenuClick}>Contact</Link>
           </div>
         )}
